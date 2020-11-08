@@ -45,17 +45,33 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
             // update the text label and detail text label
             cell.textLabel?.text = "#\(indexPath.row + 1). \(currentSearchData[indexPath.row].trackName)"
             cell.detailTextLabel?.text = currentSearchData[indexPath.row].artistName + " - $\(currentSearchData[indexPath.row].price)"
+            // display album image
+            let imageURL = URL(string: currentSearchData[indexPath.row].artworkUrl)!
+            let getImageTask = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+                if let error = error {
+                    print("Error in getting image: \(error)")
+                    return
+                }
+                
+                if let data = data,
+                    let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        // use main thread to set the image for each cell
+                        cell.imageView?.image = image
+                    }
+                }
+            }
+            getImageTask.resume()
         }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return HEIGHT_FOR_ROW
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("______ search bar text did change is called")
         searchData = [ ]
         artistName = searchText
         loadData()
