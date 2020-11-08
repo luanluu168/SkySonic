@@ -83,6 +83,21 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // check to see if the index is actually valid. If it is not valid do nothing
+        let isValidIndex = self.searchData?.indices.contains(indexPath.row)
+        if !isValidIndex! {
+            print("Cannot select this row because the index is invalid")
+            return
+        }
+        
+        if let currentRowData = self.searchData?[indexPath.row] {
+            print("__________ row: \(indexPath.row) is click")
+            textToBeSent = currentRowData.trackName
+            selectedIndex = indexPath.row
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return HEIGHT_FOR_ROW
     }
