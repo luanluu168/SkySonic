@@ -46,8 +46,16 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
             cell.textLabel?.text = "#\(indexPath.row + 1). \(currentSearchData[indexPath.row].trackName)"
             cell.detailTextLabel?.text = currentSearchData[indexPath.row].artistName + " - $\(currentSearchData[indexPath.row].price)"
         }
+        
         return cell
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("______ search bar text did change is called")
+        searchData = [ ]
+        artistName = searchText
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

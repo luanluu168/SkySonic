@@ -35,3 +35,25 @@ struct Result: Codable {
         case results
     }
 }
+
+// iTune base URL
+let itunesBaseURL = URL(string: "https://itunes.apple.com/search")!
+
+// make an extension to create a URL with some queries as a parameter
+extension URL {
+    func withQueries(_ queries: [String: String]) -> URL? {
+        var components = URLComponents(url: self, resolvingAgainstBaseURL: true)
+        components?.queryItems = queries.map{ URLQueryItem(name: $0.0, value: $0.1) }
+        return components?.url
+    }
+}
+
+func createURL(artistName: String) -> URL? {
+    let itunesQuery: [String: String] = [
+        "term": artistName,
+        "media": "music",
+        "lang": "en_us",
+        "limit": "12"
+    ]
+    return itunesBaseURL.withQueries(itunesQuery)
+}
