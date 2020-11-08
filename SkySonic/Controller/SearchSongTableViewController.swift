@@ -50,6 +50,10 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("______ search bar text did change is called")
         searchData = [ ]
