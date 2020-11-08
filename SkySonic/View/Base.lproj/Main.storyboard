@@ -54,11 +54,28 @@
                     <navigationItem key="navigationItem" title="Search" id="rmu-0A-R50"/>
                     <connections>
                         <outlet property="searchBar" destination="SDt-Y1-7mf" id="hkN-LX-EBf"/>
+                        <segue destination="5l6-NW-eEw" kind="show" identifier="searchToNowPlayingSegue" id="9OX-uU-ZCK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvq-hN-EKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1338" y="-1708"/>
+        </scene>
+        <!--NowPlaying-->
+        <scene sceneID="004-vd-uEP">
+            <objects>
+                <viewController id="5l6-NW-eEw" customClass="NowPlayingViewController" customModule="SkySonic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGZ-aG-czf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1X3-5b-5SA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NowPlaying" id="FD8-EA-uPb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CI4-ty-fKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="-1708"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="E8W-Bf-UGf">

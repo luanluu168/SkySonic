@@ -92,9 +92,9 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         }
         
         if let currentRowData = self.searchData?[indexPath.row] {
-            print("__________ row: \(indexPath.row) is click")
-            textToBeSent = currentRowData.trackName
+            textToBeSent   = currentRowData.trackName
             selectedIndex = indexPath.row
+            self.performSegue(withIdentifier: "searchToNowPlayingSegue", sender: nil)
         }
     }
     
