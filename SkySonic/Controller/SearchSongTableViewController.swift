@@ -26,13 +26,27 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // if the search data is empty retur 0. Otherwise, return the search data array's length
+        guard let currentData = searchData else { return 0 }
+        return currentData.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchSongCell")! as UITableViewCell
+        cell.backgroundColor = UIColor.clear
+        
+        if let currentSearchData = searchData {
+            
+            
+            // update the text label and detail text label
+            cell.textLabel?.text = "#\(indexPath.row + 1). \(currentSearchData[indexPath.row].trackName)"
+            cell.detailTextLabel?.text = currentSearchData[indexPath.row].artistName + " - $\(currentSearchData[indexPath.row].price)"
+        }
+        return cell
     }
 
     /*

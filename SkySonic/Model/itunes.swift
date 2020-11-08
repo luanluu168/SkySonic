@@ -25,3 +25,13 @@ struct Track: Codable {
         case price = "trackPrice"
     }
 }
+
+struct Result: Codable {
+    let resultCount: Int
+    let results: [Track]
+    
+    enum CodingKeys: String, CodingKey {
+        case resultCount
+        case results
+    }
+}
