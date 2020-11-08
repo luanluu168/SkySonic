@@ -54,6 +54,44 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         print("______ search bar text did change is called")
         searchData = [ ]
         artistName = searchText
+        loadData()
+    }
+    
+    func loadData() {
+        // if the artistName is empty do nothing
+        guard artistName != nil else { return }
+        print("load data is called")
+
+        // otherwise, search the songs based on the artistName
+        let         searchURL = createURL(artistName: self.artistName!)!
+        let searchDataTask = URLSession.shared.dataTask(with: searchURL) { (data, response, error) in
+            if let error = error {
+                print("Error in loading data: \(error)")
+            }
+            
+            print("dataTask, no error")
+            
+//            let bytesData = String(data: data!, encoding: String.Encoding.utf8)
+//            if let bytesData = bytesData {
+//                print("bytesData: \(String(describing: bytesData))")
+//            }
+            
+            let jsonDecoder = JSONDecoder()
+            if let data = data,
+                let result = try?jsonDecoder.decode(Result.self, from: data) {
+                
+                // store the results to the searchData array after decoding the json
+                for eachResult in result.results {
+                    self.searchData?.append(eachResult)
+                }
+                
+                // use main thread to reload the table view
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        searchDataTask.resume()
     }
     
 
