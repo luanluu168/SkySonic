@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F60756B25588567002080D6 /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756A25588567002080D6 /* ExtensionUIImage.swift */; };
 		0F60756D25588624002080D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756C25588624002080D6 /* Constants.swift */; };
+		0F60756F2558912C002080D6 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */; };
 		0FD79C0A2557C67C00D51346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C092557C67C00D51346 /* AppDelegate.swift */; };
 		0FD79C0C2557C67C00D51346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C0B2557C67C00D51346 /* SceneDelegate.swift */; };
 		0FD79C0E2557C67C00D51346 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C0D2557C67C00D51346 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		0F60756A25588567002080D6 /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
 		0F60756C25588624002080D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
 		0FD79C062557C67C00D51346 /* SkySonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkySonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD79C092557C67C00D51346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FD79C0B2557C67C00D51346 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				0FD79C222557D09100D51346 /* itunes.swift */,
 				0F60756A25588567002080D6 /* ExtensionUIImage.swift */,
 				0F60756C25588624002080D6 /* Constants.swift */,
+				0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				0FD79C212557CCA300D51346 /* SearchSongTableViewController.swift in Sources */,
 				0F60756D25588624002080D6 /* Constants.swift in Sources */,
 				0FD79C232557D09100D51346 /* itunes.swift in Sources */,
+				0F60756F2558912C002080D6 /* ExtensionUIImageView.swift in Sources */,
 				0FD79C0C2557C67C00D51346 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

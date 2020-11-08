@@ -58,6 +58,7 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
                     DispatchQueue.main.async {
                         // use main thread to set the image for each row
                         cell.imageView?.image = image.resizeImageToSmaller(80.0)
+                        cell.imageView?.makeRounded(4.0)
                     }
                 }
             }
