@@ -40,7 +40,11 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         cell.backgroundColor = UIColor.clear
         
         if let currentSearchData = searchData {
-            
+            // check to see if the index is actually valid. If it is not valid just return the original cell
+            let isValidIndex = currentSearchData.indices.contains(indexPath.row)
+            if !isValidIndex {
+                return cell
+            }
             
             // update the text label and detail text label
             cell.textLabel?.text = "#\(indexPath.row + 1). \(currentSearchData[indexPath.row].trackName)"
