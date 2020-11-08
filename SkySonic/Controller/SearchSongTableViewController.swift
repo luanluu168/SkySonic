@@ -21,6 +21,9 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
 
         // delegate search bar
         searchBar.delegate = self
+        
+        // change background color to gray
+        self.tableView.backgroundColor = UIColor.systemGray
     }
 
     // MARK: - Table view data source
@@ -67,6 +70,11 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
                 }
             }
             getImageTask.resume()
+            
+            // modify the font and color of the text label and detail text label
+            cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 17)
+            cell.textLabel?.textColor = UIColor.white
+            cell.detailTextLabel?.textColor = UIColor.white
         }
         
         return cell
