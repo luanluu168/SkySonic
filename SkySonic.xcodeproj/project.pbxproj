@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F60756B25588567002080D6 /* ResizeUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756A25588567002080D6 /* ResizeUIImage.swift */; };
+		0F60756B25588567002080D6 /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756A25588567002080D6 /* ExtensionUIImage.swift */; };
 		0F60756D25588624002080D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756C25588624002080D6 /* Constants.swift */; };
 		0FD79C0A2557C67C00D51346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C092557C67C00D51346 /* AppDelegate.swift */; };
 		0FD79C0C2557C67C00D51346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C0B2557C67C00D51346 /* SceneDelegate.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F60756A25588567002080D6 /* ResizeUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeUIImage.swift; sourceTree = "<group>"; };
+		0F60756A25588567002080D6 /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
 		0F60756C25588624002080D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0FD79C062557C67C00D51346 /* SkySonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkySonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD79C092557C67C00D51346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD79C222557D09100D51346 /* itunes.swift */,
-				0F60756A25588567002080D6 /* ResizeUIImage.swift */,
+				0F60756A25588567002080D6 /* ExtensionUIImage.swift */,
 				0F60756C25588624002080D6 /* Constants.swift */,
 			);
 			path = Model;
@@ -175,7 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FD79C0E2557C67C00D51346 /* ViewController.swift in Sources */,
-				0F60756B25588567002080D6 /* ResizeUIImage.swift in Sources */,
+				0F60756B25588567002080D6 /* ExtensionUIImage.swift in Sources */,
 				0FD79C0A2557C67C00D51346 /* AppDelegate.swift in Sources */,
 				0FD79C212557CCA300D51346 /* SearchSongTableViewController.swift in Sources */,
 				0F60756D25588624002080D6 /* Constants.swift in Sources */,
