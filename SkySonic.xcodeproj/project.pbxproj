@@ -56,15 +56,39 @@
 		0FD79C082557C67C00D51346 /* SkySonic */ = {
 			isa = PBXGroup;
 			children = (
+				0FD79C1D2557CABF00D51346 /* Controller */,
+				0FD79C1E2557CB0800D51346 /* View */,
+				0FD79C1F2557CB1500D51346 /* Model */,
 				0FD79C092557C67C00D51346 /* AppDelegate.swift */,
 				0FD79C0B2557C67C00D51346 /* SceneDelegate.swift */,
-				0FD79C0D2557C67C00D51346 /* ViewController.swift */,
-				0FD79C0F2557C67C00D51346 /* Main.storyboard */,
 				0FD79C122557C67E00D51346 /* Assets.xcassets */,
 				0FD79C142557C67E00D51346 /* LaunchScreen.storyboard */,
 				0FD79C172557C67E00D51346 /* Info.plist */,
 			);
 			path = SkySonic;
+			sourceTree = "<group>";
+		};
+		0FD79C1D2557CABF00D51346 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FD79C0D2557C67C00D51346 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0FD79C1E2557CB0800D51346 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FD79C0F2557C67C00D51346 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FD79C1F2557CB1500D51346 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
