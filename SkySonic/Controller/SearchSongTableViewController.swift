@@ -24,6 +24,9 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         
         // change background color to gray
         self.tableView.backgroundColor = UIColor.systemGray
+        
+        // change search icon image
+        searchBar.setImage(UIImage(named: SEARCH_POINTER_ICON_24), for: .search, state: .normal)
     }
 
     // MARK: - Table view data source
