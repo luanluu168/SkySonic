@@ -27,8 +27,16 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         
         // change search icon image
         searchBar.setImage(UIImage(named: SEARCH_POINTER_ICON_24), for: .search, state: .normal)
+        
+        // change the navigation bar's back button image
+        self.changeNavigationBarBackButtonImage()
     }
-
+        
+    func changeNavigationBarBackButtonImage() {
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: NAVIGATION_BACK_ARROW_ICON)
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: NAVIGATION_BACK_ARROW_ICON)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
