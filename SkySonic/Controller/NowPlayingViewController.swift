@@ -44,6 +44,7 @@ class NowPlayingViewController: UIViewController {
         
         if let track = player.tracks?[player.currentIndex] {
             songName.text = track.trackName
+            player.currentTrack = track
             configurePlayer()
         }
     }
@@ -60,9 +61,13 @@ class NowPlayingViewController: UIViewController {
             }
             print("__ player's play is called")
             player.play()
+            playPauseButton.setImage(UIImage(named: PAUSE_ICON_64), for: UIControl.State.normal)
+            
         }
         
     }
+    
+    
     
 
     /*

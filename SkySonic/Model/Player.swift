@@ -21,4 +21,10 @@ class Player: AVQueuePlayer {
     }
 }
 
+extension AVQueuePlayer {
+    func isPlaying() -> Bool {
+        return (self.rate > 0 && self.error == nil)
+    }
+}
+
 var player = Player()
