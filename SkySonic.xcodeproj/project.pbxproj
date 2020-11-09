@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4A48932559B4DF00FCE0EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A48922559B4DF00FCE0EF /* HomeViewController.swift */; };
 		0F60756B25588567002080D6 /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756A25588567002080D6 /* ExtensionUIImage.swift */; };
 		0F60756D25588624002080D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756C25588624002080D6 /* Constants.swift */; };
 		0F60756F2558912C002080D6 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F4A48922559B4DF00FCE0EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0F60756A25588567002080D6 /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
 		0F60756C25588624002080D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				0FD79C202557CCA300D51346 /* SearchSongTableViewController.swift */,
 				0F6AE9F22558ADF2006B91E2 /* NowPlayingViewController.swift */,
+				0F4A48922559B4DF00FCE0EF /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				0FD79C0A2557C67C00D51346 /* AppDelegate.swift in Sources */,
 				0FD79C212557CCA300D51346 /* SearchSongTableViewController.swift in Sources */,
 				0F60756D25588624002080D6 /* Constants.swift in Sources */,
+				0F4A48932559B4DF00FCE0EF /* HomeViewController.swift in Sources */,
 				0FD79C232557D09100D51346 /* itunes.swift in Sources */,
 				0F60756F2558912C002080D6 /* ExtensionUIImageView.swift in Sources */,
 				0F6AE9F52558B160006B91E2 /* Player.swift in Sources */,
