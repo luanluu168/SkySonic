@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F4A48932559B4DF00FCE0EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A48922559B4DF00FCE0EF /* HomeViewController.swift */; };
+		0F4A48952559B69D00FCE0EF /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A48942559B69D00FCE0EF /* ExtensionUIButton.swift */; };
 		0F60756B25588567002080D6 /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756A25588567002080D6 /* ExtensionUIImage.swift */; };
 		0F60756D25588624002080D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756C25588624002080D6 /* Constants.swift */; };
 		0F60756F2558912C002080D6 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0F4A48922559B4DF00FCE0EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0F4A48942559B69D00FCE0EF /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 		0F60756A25588567002080D6 /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
 		0F60756C25588624002080D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				0F60756C25588624002080D6 /* Constants.swift */,
 				0F60756E2558912C002080D6 /* ExtensionUIImageView.swift */,
 				0F6AE9F42558B160006B91E2 /* Player.swift */,
+				0F4A48942559B69D00FCE0EF /* ExtensionUIButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				0F6AE9F32558ADF2006B91E2 /* NowPlayingViewController.swift in Sources */,
 				0F60756B25588567002080D6 /* ExtensionUIImage.swift in Sources */,
 				0FD79C0A2557C67C00D51346 /* AppDelegate.swift in Sources */,
+				0F4A48952559B69D00FCE0EF /* ExtensionUIButton.swift in Sources */,
 				0FD79C212557CCA300D51346 /* SearchSongTableViewController.swift in Sources */,
 				0F60756D25588624002080D6 /* Constants.swift in Sources */,
 				0F4A48932559B4DF00FCE0EF /* HomeViewController.swift in Sources */,

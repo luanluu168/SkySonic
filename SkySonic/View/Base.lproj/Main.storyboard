@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="370" y="-946"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="EbQ-fq-x46">
             <objects>
-                <viewController id="ek1-Ve-AeH" sceneMemberID="viewController">
+                <viewController id="ek1-Ve-AeH" customClass="HomeViewController" customModule="SkySonic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uX0-Er-pi9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,6 +295,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S8f-Kq-rdD"/>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="VWa-ZW-nD6" id="xQU-mJ-TdD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2z-ks-J3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
