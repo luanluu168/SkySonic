@@ -26,7 +26,7 @@ struct Track: Codable {
     }
 }
 
-// JsonDecoder
+// use in JsonDecoder
 struct Result: Codable {
     let resultCount: Int
     let results: [Track]

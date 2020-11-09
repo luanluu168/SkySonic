@@ -91,6 +91,14 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // setup the player before moving to the destination view (NowPlayingViewController)
+            player.removeAllItems()
+            player.receivedSongName  = textToBeSent // send the current selected song name
+            player.tracks = searchData
+            player.currentIndex = selectedIndex!
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // check to see if the index is actually valid. If it is not valid do nothing
         let isValidIndex = self.searchData?.indices.contains(indexPath.row)

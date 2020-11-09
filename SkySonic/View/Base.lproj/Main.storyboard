@@ -215,6 +215,17 @@
                         <viewLayoutGuide key="safeArea" id="1X3-5b-5SA"/>
                     </view>
                     <navigationItem key="navigationItem" title="NowPlaying" id="FD8-EA-uPb"/>
+                    <connections>
+                        <outlet property="artistImage" destination="moa-MF-NRw" id="0G9-Tf-6RI"/>
+                        <outlet property="drivingModeButton" destination="RtP-af-CvC" id="ewz-Gt-WDr"/>
+                        <outlet property="favoriteButton" destination="bES-y3-wc7" id="vMd-Ud-Dk9"/>
+                        <outlet property="playPauseButton" destination="IVw-Sh-y5q" id="3G8-8Y-sjr"/>
+                        <outlet property="songCurrentTimeLabel" destination="JC5-Uk-Cdv" id="nMn-on-3dW"/>
+                        <outlet property="songDurationLabel" destination="GZ4-lx-Iyu" id="XoX-xa-5Jv"/>
+                        <outlet property="songName" destination="QBc-ey-NO9" id="sSR-nE-5Nc"/>
+                        <outlet property="songSlider" destination="3eS-Ec-zO2" id="Lnx-UB-Wkl"/>
+                        <outlet property="volumeSlider" destination="01a-Gj-rkI" id="hpN-JO-ctf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI4-ty-fKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

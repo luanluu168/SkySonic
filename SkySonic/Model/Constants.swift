@@ -11,3 +11,4 @@ import UIKit
 let HEIGHT_FOR_ROW: CGFloat = 70
 let SEARCH_POINTER_ICON_24 = "search-pointer-icon-24"
 let NAVIGATION_BACK_ARROW_ICON = "Misc-Back-icon"
+let RED_ICON_16  = "Button-Blank-Red-icon-16"
