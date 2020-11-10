@@ -12,6 +12,8 @@ import UIKit
 class NowPlayingViewController: UIViewController {
 
     var curTrack: Track?
+    var songDurationTimer: Time? = Time(hours: 0, minutes: 0, seconds: 0)
+    var songPlayingTimer: Time?   = Time(hours: 0, minutes: 0, seconds: 0)
     
     // top area
     @IBOutlet weak var artistImage: UIImageView!
@@ -31,7 +33,7 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("in the now playing view, calling view did load")
+        print("in the now playing view, calling view did load \(player.tracks!.count)")
         print("___________________ check player.currentIndex = \(player.currentIndex)")
         // hide volume slider, driving mode button and favorite button
         self.volumeSlider.isHidden = true
@@ -64,27 +66,79 @@ class NowPlayingViewController: UIViewController {
                 // notify when a song is end so that we can increase the array's index
                 NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlayingSong), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
             }
+            
+            // synchonize the song slider with the player's current song
+            let interval = CMTime(value: 1, timescale: 2)
+            player.timeObserverToken = player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: {
+                [weak self] (progressTime) in
+                
+                let totalSeconds: Float64 = CMTimeGetSeconds(progressTime)
+                // update the song's playing time and its label
+                self?.songPlayingTimer!.updateTime(inputSeconds: totalSeconds)
+                self?.songCurrentTimeLabel.text = "\(self?.songPlayingTimer!.getMinutesInStringFormat() ?? "--"):\(self?.songPlayingTimer!.getSecondsInStringFormat() ?? "--")"
+                
+                // move the playhead
+                if let currentSongDuration = player.currentItem?.duration {
+                    let durationSeconds = CMTimeGetSeconds(currentSongDuration)
+                    self?.songSlider.value = Float(totalSeconds / durationSeconds)
+                }
+                
+                // to only update and display the songDurationLabel's text once
+                if self?.songDurationLabel.text == "00:00" {
+                    print("songDurationLabel is updated")
+                    self?.displayDuration()
+                }
+            })
             print("__ player's play is called")
             player.play()
+            self.updateSongSlider()
             playPauseButton.setImage(UIImage(named: PAUSE_ICON_64), for: UIControl.State.normal)
             
         }
         
     }
     
+    func displayDuration() {
+        let duration = player.currentItem?.duration.seconds ?? 0
+        let playDuration = self.formatDurationTime(totalseconds: duration)
+        self.songDurationLabel.text = playDuration
+    }
+    
+    func formatDurationTime(totalseconds: Double) -> String {
+        guard !totalseconds.isNaN else { return "00:00" }
+        self.songDurationTimer!.updateTime(inputSeconds: totalseconds)
+        return "\(self.songDurationTimer!.getMinutesInStringFormat()):\(self.songDurationTimer!.getSecondsInStringFormat())"
+    }
+    
     @objc func playerDidFinishPlayingSong(note: NSNotification) {
         // print("______ in the now playing finish one song, items.count: \(player.items().count)")
         player.currentIndex = (player.currentIndex + 1) % player.tracks!.count
         
-        // update artist image
+        // update artist image and new song's duration
         displayImage()
+        displayDuration()
         
-        // detach observer
+        // detach old song's observer
         if let token = player.timeObserverToken {
             player.removeTimeObserver(token)
             player.timeObserverToken = nil
         }
-        
+
+    }
+    
+    func updateSongSlider() {
+        songSlider.addTarget(self, action: #selector(handleSongSliderChange), for: .valueChanged)
+    }
+    
+    @objc func handleSongSliderChange() {
+        print("Song slider value: \(songSlider.value)")
+        if let duration = player.currentItem?.duration {
+            let totalSeconds = CMTimeGetSeconds(duration)
+            let currentValue = Float64(songSlider.value) * totalSeconds
+            let seekTime = CMTime(value: Int64(currentValue), timescale: 1)
+            player.seek(to: seekTime, completionHandler: {
+                (completionHandler) in /* do nothing */ })
+        }
     }
     
     func displayImage() {

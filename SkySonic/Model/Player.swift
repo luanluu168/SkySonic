@@ -11,7 +11,7 @@ import UIKit
 
 class Player: AVQueuePlayer {
     var currentIndex: Int = 0
-    var player: AVQueuePlayer!
+    var player: AVQueuePlayer?
     var tracks: [Track]?
     var currentTrack: Track?
     var receivedSongName: String?
