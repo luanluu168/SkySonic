@@ -104,6 +104,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWr-zO-jfj" userLabel="SoundButton">
                                                 <rect key="frame" x="10" y="176" width="48" height="48"/>
                                                 <state key="normal" image="Audio-volume-icon-48"/>
+                                                <connections>
+                                                    <action selector="handleAdjustVolumeButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="MKL-5u-uOA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUk-B7-daB" userLabel="MoreFeatureButton">
                                                 <rect key="frame" x="356" y="176" width="48" height="48"/>
@@ -127,6 +130,9 @@
                                                 </constraints>
                                                 <color key="minimumTrackTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="maximumTrackTintColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="handleVolumeSliderChange:" destination="5l6-NW-eEw" eventType="valueChanged" id="3eg-SE-wof"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

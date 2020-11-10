@@ -28,6 +28,12 @@ class NowPlayingViewController: UIViewController {
         self.drivingModeButton.isHidden = !self.drivingModeButton.isHidden
         self.favoriteButton.isHidden        = !self.favoriteButton.isHidden
     }
+    @IBAction func handleAdjustVolumeButtonIsPressed(_ sender: UIButton) {
+        self.volumeSlider.isHidden = !self.volumeSlider.isHidden
+    }
+    @IBAction func handleVolumeSliderChange(_ sender: UISlider) {
+        player.volume = volumeSlider.value
+    }
     // end middle area
     
     // bottom area
@@ -79,7 +85,10 @@ class NowPlayingViewController: UIViewController {
         self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
         // make the artist image rounded corner
         self.artistImage.makeRounded(10.0)
+        // turn the volume slider to vertical
+        volumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2) )
         
+        // if the element at currentIndex of the player's array contains data
         if let track = player.tracks?[player.currentIndex] {
             configurePlayer()
             songName.text = track.trackName
@@ -103,6 +112,7 @@ class NowPlayingViewController: UIViewController {
         // change the thumbImage of the song slider to a smaller circle image
         self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
         
+        // if the element at currentIndex of the player's array contains data
         if let track = player.tracks?[player.currentIndex] {
             configurePlayer()
             songName.text = track.trackName
