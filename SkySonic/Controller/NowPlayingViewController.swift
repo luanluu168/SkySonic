@@ -12,8 +12,8 @@ import UIKit
 class NowPlayingViewController: UIViewController {
 
     var curTrack: Track?
-    var songDurationTimer: Time? = Time(hours: 0, minutes: 0, seconds: 0)
-    var songPlayingTimer: Time?   = Time(hours: 0, minutes: 0, seconds: 0)
+    var songDurationTimer: Time! = Time(hours: 0, minutes: 0, seconds: 0)
+    var songPlayingTimer: Time!   = Time(hours: 0, minutes: 0, seconds: 0)
     
     // top area
     @IBOutlet weak var artistImage: UIImageView!
@@ -148,12 +148,14 @@ class NowPlayingViewController: UIViewController {
         displayImage()
         displayDuration()
         
-        // detach old song's observer
-        if let token = player.timeObserverToken {
-            player.removeTimeObserver(token)
-            player.timeObserverToken = nil
+        if (player.tracks!.count == 1) {
+            // detach all songs' observer
+            if let token = player.timeObserverToken {
+                player.removeTimeObserver(token)
+                player.timeObserverToken = nil
+            }
         }
-
+        
     }
     
     func updateSongSlider() {
