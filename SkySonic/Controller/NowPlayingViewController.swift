@@ -40,16 +40,19 @@ class NowPlayingViewController: UIViewController {
         // change the thumbImage of the song slider to a smaller circle image
         self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
         // make the artist image rounded corner
-        self.artistImage.makeRounded(10)
+        self.artistImage.makeRounded(10.0)
         
         if let track = player.tracks?[player.currentIndex] {
+            configurePlayer()
             songName.text = track.trackName
             player.currentTrack = track
-            configurePlayer()
+            displayImage()
         }
     }
     
     func configurePlayer() {
+        // if the player's array has the track, put the playerItem in the player's queue
+        // as well as add observer to each song
         if let currentTrack = player.tracks?[player.currentIndex] {
             let previewURL = URL(string: currentTrack.previewUrl)!
             
@@ -58,6 +61,8 @@ class NowPlayingViewController: UIViewController {
                 let playerItem = AVPlayerItem.init(url: URL(string: player.tracks![index].previewUrl)!)
                 player.insert(playerItem, after: nil)
                 
+                // notify when a song is end so that we can increase the array's index
+                NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlayingSong), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
             }
             print("__ player's play is called")
             player.play()
@@ -67,8 +72,49 @@ class NowPlayingViewController: UIViewController {
         
     }
     
+    @objc func playerDidFinishPlayingSong(note: NSNotification) {
+        // print("______ in the now playing finish one song, items.count: \(player.items().count)")
+        player.currentIndex = (player.currentIndex + 1) % player.tracks!.count
+        
+        // update artist image
+        displayImage()
+        
+        // detach observer
+        if let token = player.timeObserverToken {
+            player.removeTimeObserver(token)
+            player.timeObserverToken = nil
+        }
+        
+    }
     
-    
+    func displayImage() {
+        print("Calling displayImage")
+        
+        // the case where the player's array do not have the data at the currentIndex
+        guard player.tracks?[player.currentIndex] != nil else { return }
+        
+        // otherwise, get the current song's image and display it
+        let imageURL = URL(string: player.tracks![player.currentIndex].artworkUrl)!
+        
+        let displayImageTask = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            // if error, display the error
+            if let error = error {
+                print("Error in displayImageTask: \(error)")
+                return
+            }
+            
+            // otherwise, use the main thread to display the image, change the image's view mode, and update the songName
+            if let data = data,
+                let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.artistImage.contentMode = UIView.ContentMode.scaleAspectFill
+                    self.artistImage.image = image
+                    self.songName.text = player.tracks![player.currentIndex].trackName
+                }
+            }
+        }
+        displayImageTask.resume()
+    }
 
     /*
     // MARK: - Navigation

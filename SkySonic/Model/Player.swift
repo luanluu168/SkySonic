@@ -15,6 +15,7 @@ class Player: AVQueuePlayer {
     var tracks: [Track]?
     var currentTrack: Track?
     var receivedSongName: String?
+    var timeObserverToken: Any?
     
     override init() {
         super.init()
