@@ -17,12 +17,18 @@ class NowPlayingViewController: UIViewController {
     
     // top area
     @IBOutlet weak var artistImage: UIImageView!
+    // end top area
     
     // middle area
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var drivingModeButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBAction func handleMoreFeaturesButtonIsPressed(_ sender: UIButton) {
+        self.drivingModeButton.isHidden = !self.drivingModeButton.isHidden
+        self.favoriteButton.isHidden        = !self.favoriteButton.isHidden
+    }
+    // end middle area
     
     // bottom area
     @IBOutlet weak var songSlider: UISlider!
@@ -57,7 +63,7 @@ class NowPlayingViewController: UIViewController {
             player.advanceToNextItem()
         }
     }
-    
+    // end bottom area
     
     
     override func viewDidLoad() {
@@ -73,6 +79,29 @@ class NowPlayingViewController: UIViewController {
         self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
         // make the artist image rounded corner
         self.artistImage.makeRounded(10.0)
+        
+        if let track = player.tracks?[player.currentIndex] {
+            configurePlayer()
+            songName.text = track.trackName
+            player.currentTrack = track
+            displayImage()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        player.pause()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("$$$$$$$$$$$$$$$$$$$$$$$$ NowPlaying view will appear is called")
+        // hide volume slider, driving mode button and favorite button
+        self.volumeSlider.isHidden = true
+        self.drivingModeButton.isHidden = true
+        self.favoriteButton.isHidden = true
+        // change the thumbImage of the song slider to a smaller circle image
+        self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
         
         if let track = player.tracks?[player.currentIndex] {
             configurePlayer()

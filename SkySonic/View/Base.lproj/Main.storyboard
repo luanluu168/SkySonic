@@ -108,6 +108,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUk-B7-daB" userLabel="MoreFeatureButton">
                                                 <rect key="frame" x="356" y="176" width="48" height="48"/>
                                                 <state key="normal" image="Messaging-More-icon-48"/>
+                                                <connections>
+                                                    <action selector="handleMoreFeaturesButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="6Bq-bX-I29"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtP-af-CvC" userLabel="DrivingModeButton">
                                                 <rect key="frame" x="356" y="118" width="48" height="48"/>
