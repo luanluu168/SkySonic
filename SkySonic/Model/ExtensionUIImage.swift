@@ -18,7 +18,7 @@ extension UIImage {
             return self
         }
         
-        // otherwise, make it smaller
+        // otherwise, make it smaller size
         widthRatio = width / previousWidth.significand
         let   size = CGSize(width: widthRatio, height: widthRatio)
         let OPAQUE = false

@@ -118,6 +118,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtP-af-CvC" userLabel="DrivingModeButton">
                                                 <rect key="frame" x="356" y="118" width="48" height="48"/>
                                                 <state key="normal" image="Taxi-icon-48"/>
+                                                <connections>
+                                                    <segue destination="Qyg-d4-iYI" kind="show" identifier="nowPlayingToDrivingModeSegue" id="bCw-C4-NHf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bES-y3-wc7" userLabel="FavoriteButton">
                                                 <rect key="frame" x="298" y="176" width="48" height="48"/>
@@ -248,6 +251,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI4-ty-fKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2319" y="-1479"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="18G-uH-vcl">
+            <objects>
+                <viewController id="Qyg-d4-iYI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1zu-wx-Vvs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kFL-AZ-qvK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mmf-Tb-nRC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZx-h6-7au" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3314" y="-1479"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="EbQ-fq-x46">
