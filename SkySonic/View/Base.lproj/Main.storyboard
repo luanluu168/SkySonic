@@ -178,14 +178,23 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziN-vD-FeK" userLabel="BackwardButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="128.5"/>
                                                                 <state key="normal" image="Button-Backward-icon-64"/>
+                                                                <connections>
+                                                                    <action selector="handleBackwardButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="tvm-ro-8Br"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVw-Sh-y5q" userLabel="PlayPauseButton">
                                                                 <rect key="frame" x="141.5" y="0.0" width="121" height="128.5"/>
                                                                 <state key="normal" image="Button-Play-icon-64"/>
+                                                                <connections>
+                                                                    <action selector="handlePlayPauseButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="oBY-iO-5Xa"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4d-5r-GiK" userLabel="ForwardButton">
                                                                 <rect key="frame" x="282.5" y="0.0" width="121.5" height="128.5"/>
                                                                 <state key="normal" image="Button-Forward-icon-64"/>
+                                                                <connections>
+                                                                    <action selector="handleForwardButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="lOb-aH-BfD"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

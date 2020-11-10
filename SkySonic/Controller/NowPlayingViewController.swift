@@ -29,6 +29,36 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet weak var songCurrentTimeLabel: UILabel!
     @IBOutlet weak var songDurationLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBAction func handlePlayPauseButtonIsPressed(_ sender: UIButton) {
+        // if the player is playing, then pause the player and set the button image to the pause icon
+        if ( player.isPlaying() ) {
+            player.pause()
+            playPauseButton.setImage(UIImage(named: PLAY_ICON_64), for: UIControl.State.normal)
+            return
+        }
+        
+        // otherwise, play the player and set the button image to the play icon
+        player.play()
+        playPauseButton.setImage(UIImage(named: PAUSE_ICON_64), for: UIControl.State.normal)
+    }
+    @IBAction func handleBackwardButtonIsPressed(_ sender: UIButton) {
+        if (player.currentIndex > 0) {
+            player.currentIndex -= 1
+            displayImage()
+            player.removeAllItems()
+            configurePlayer()
+        }
+    }
+    @IBAction func handleForwardButtonIsPressed(_ sender: UIButton) {
+        // if the currentIndex is smaller than the array's last index
+        if (player.currentIndex < (player.tracks!.count - 1) ) {
+            player.currentIndex += 1
+            displayImage()
+            player.advanceToNextItem()
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
