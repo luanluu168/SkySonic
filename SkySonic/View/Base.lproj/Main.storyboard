@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="2319" y="-1479"/>
         </scene>
-        <!--View Controller-->
+        <!--Driving Mode View Controller-->
         <scene sceneID="18G-uH-vcl">
             <objects>
-                <viewController id="Qyg-d4-iYI" sceneMemberID="viewController">
+                <viewController id="Qyg-d4-iYI" customClass="DrivingModeViewController" customModule="SkySonic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1zu-wx-Vvs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,6 +369,12 @@
                         <viewLayoutGuide key="safeArea" id="kFL-AZ-qvK"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mmf-Tb-nRC"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="qbk-39-DiX" id="XcW-MP-dwo"/>
+                        <outlet property="playPauseButton" destination="k4L-Qy-HPw" id="Jhv-GE-2jU"/>
+                        <outlet property="songCurrentTimeLabel" destination="9BI-jk-ehm" id="QCs-e2-454"/>
+                        <outlet property="songName" destination="nOA-g8-yLL" id="do7-TI-WSa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZx-h6-7au" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

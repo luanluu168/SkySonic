@@ -97,6 +97,7 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
             player.receivedSongName  = textToBeSent // send the current selected song name
             player.tracks = searchData
             player.currentIndex = selectedIndex!
+            
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

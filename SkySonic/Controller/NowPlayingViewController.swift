@@ -197,6 +197,20 @@ class NowPlayingViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! DrivingModeViewController
+        print("________________________________________ nowplaying prepare is called, player.currentIndex = \(player.currentIndex)")
+        
+        if (destination.player == nil) {
+            destination.player = Player()
+            destination.player.currentIndex = player.currentIndex
+            destination.player.tracks = player.tracks
+        } else {
+            destination.player.currentIndex = player.currentIndex
+            destination.player.tracks = player.tracks
+        }
+    }
+    
     func updateSongSlider() {
         songSlider.addTarget(self, action: #selector(handleSongSliderChange), for: .valueChanged)
     }
