@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="1338" y="-1479"/>
         </scene>
-        <!--NowPlaying-->
+        <!--Now Playing-->
         <scene sceneID="004-vd-uEP">
             <objects>
                 <viewController id="5l6-NW-eEw" customClass="NowPlayingViewController" customModule="SkySonic" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1X3-5b-5SA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NowPlaying" id="FD8-EA-uPb"/>
+                    <navigationItem key="navigationItem" title="Now Playing" id="FD8-EA-uPb"/>
                     <connections>
                         <outlet property="artistImage" destination="moa-MF-NRw" id="0G9-Tf-6RI"/>
                         <outlet property="drivingModeButton" destination="RtP-af-CvC" id="ewz-Gt-WDr"/>
@@ -259,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="2319" y="-1479"/>
         </scene>
-        <!--Driving Mode View Controller-->
+        <!--Driving Mode-->
         <scene sceneID="18G-uH-vcl">
             <objects>
                 <viewController id="Qyg-d4-iYI" customClass="DrivingModeViewController" customModule="SkySonic" customModuleProvider="target" sceneMemberID="viewController">
@@ -390,7 +390,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kFL-AZ-qvK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Mmf-Tb-nRC"/>
+                    <navigationItem key="navigationItem" title="Driving Mode" id="Mmf-Tb-nRC"/>
                     <connections>
                         <outlet property="playPauseButton" destination="k4L-Qy-HPw" id="Jhv-GE-2jU"/>
                         <outlet property="songCurrentTimeLabel" destination="9BI-jk-ehm" id="QCs-e2-454"/>
