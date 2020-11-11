@@ -17,6 +17,9 @@ class FavoriteTableViewController: UITableViewController {
 
         // change table background color
         self.tableView.backgroundColor = UIColor.systemGray
+        
+        // change the navigation bar's image
+//        self.changeNavigationBarBackButtonImage()
     }
 
     // MARK: - Table view data source
@@ -51,6 +54,12 @@ class FavoriteTableViewController: UITableViewController {
             destination.curTrack = favorites[currentFavoriteIndex]
             destination.isSegueFromFavorite = true
         }
+    }
+    
+    func changeNavigationBarBackButtonImage() {
+        let backArrowImage = UIImage(named: NAVIGATION_BACK_ARROW_ICON)
+        self.navigationController?.navigationBar.backIndicatorImage = backArrowImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backArrowImage
     }
 
     /*

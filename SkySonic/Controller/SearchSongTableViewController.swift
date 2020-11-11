@@ -33,8 +33,9 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
     }
         
     func changeNavigationBarBackButtonImage() {
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: NAVIGATION_BACK_ARROW_ICON)
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: NAVIGATION_BACK_ARROW_ICON)
+        let backArrowImage = UIImage(named: NAVIGATION_BACK_ARROW_ICON)
+        self.navigationController?.navigationBar.backIndicatorImage = backArrowImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backArrowImage
     }
     
     // MARK: - Table view data source
