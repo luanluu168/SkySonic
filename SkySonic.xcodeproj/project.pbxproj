@@ -15,6 +15,7 @@
 		0F6AC223255A16470031D327 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AC222255A16470031D327 /* Time.swift */; };
 		0F6AE9F32558ADF2006B91E2 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AE9F22558ADF2006B91E2 /* NowPlayingViewController.swift */; };
 		0F6AE9F52558B160006B91E2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AE9F42558B160006B91E2 /* Player.swift */; };
+		0F6DAFDE255C8F8700264358 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6DAFDD255C8F8700264358 /* Favorites.swift */; };
 		0F6F6F89255B9D0B00EA8FA9 /* DrivingModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F6F88255B9D0B00EA8FA9 /* DrivingModeViewController.swift */; };
 		0FD79C0A2557C67C00D51346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C092557C67C00D51346 /* AppDelegate.swift */; };
 		0FD79C0C2557C67C00D51346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD79C0B2557C67C00D51346 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		0F6AC222255A16470031D327 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0F6AE9F22558ADF2006B91E2 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		0F6AE9F42558B160006B91E2 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0F6DAFDD255C8F8700264358 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		0F6F6F88255B9D0B00EA8FA9 /* DrivingModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingModeViewController.swift; sourceTree = "<group>"; };
 		0FD79C062557C67C00D51346 /* SkySonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkySonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD79C092557C67C00D51346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				0F6AE9F42558B160006B91E2 /* Player.swift */,
 				0F4A48942559B69D00FCE0EF /* ExtensionUIButton.swift */,
 				0F6AC222255A16470031D327 /* Time.swift */,
+				0F6DAFDD255C8F8700264358 /* Favorites.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				0F4A48932559B4DF00FCE0EF /* HomeViewController.swift in Sources */,
 				0FD79C232557D09100D51346 /* itunes.swift in Sources */,
 				0F60756F2558912C002080D6 /* ExtensionUIImageView.swift in Sources */,
+				0F6DAFDE255C8F8700264358 /* Favorites.swift in Sources */,
 				0F6AE9F52558B160006B91E2 /* Player.swift in Sources */,
 				0FD79C0C2557C67C00D51346 /* SceneDelegate.swift in Sources */,
 			);
