@@ -9,8 +9,6 @@
 import UIKit
 
 class FavoriteTableViewController: UITableViewController {
-
-    var currentFavoriteIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +27,16 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return favorites.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteTrackCell", for: indexPath)
+        // Configure the cell...
+        cell.textLabel?.text = "#\(indexPath.row + 1). \(favorites[indexPath.row].trackName)"
+        cell.detailTextLabel?.text = favorites[indexPath.row].artistName
+        
+        return cell
     }
 
     /*

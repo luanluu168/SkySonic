@@ -470,21 +470,37 @@
             </objects>
             <point key="canvasLocation" x="-620" y="-946"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favorite-->
         <scene sceneID="mSf-H9-aCV">
             <objects>
-                <tableViewController id="Mdg-It-X2V" sceneMemberID="viewController">
+                <tableViewController id="Mdg-It-X2V" customClass="FavoriteTableViewController" customModule="SkySonic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ufa-bi-MlJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="G7i-ck-gUx">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteTrackCell" textLabel="imA-Ot-r3l" detailTextLabel="p10-oe-ejc" style="IBUITableViewCellStyleSubtitle" id="G7i-ck-gUx">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G7i-ck-gUx" id="APf-ka-nF2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imA-Ot-r3l">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p10-oe-ejc">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -493,7 +509,7 @@
                             <outlet property="delegate" destination="Mdg-It-X2V" id="EY4-1R-Kax"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bS1-Mp-Xo3"/>
+                    <navigationItem key="navigationItem" title="Favorite" id="bS1-Mp-Xo3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKr-bn-CX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -518,11 +534,11 @@
             </objects>
             <point key="canvasLocation" x="390" y="-1479"/>
         </scene>
-        <!--Item-->
+        <!--Favorite-->
         <scene sceneID="vgd-9Q-Ljb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rYQ-aF-9kL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Kqa-Vu-bB5"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" id="Kqa-Vu-bB5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZSK-dX-ySy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
