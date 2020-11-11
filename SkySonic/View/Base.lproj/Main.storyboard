@@ -301,14 +301,23 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCn-jc-Ppv" userLabel="BackwardButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="121.5" height="96"/>
                                                         <state key="normal" image="Button-Backward-icon-96"/>
+                                                        <connections>
+                                                            <action selector="handleBackwardButtonIsPressed:" destination="Qyg-d4-iYI" eventType="touchUpInside" id="tQQ-zt-6P4"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4L-Qy-HPw" userLabel="PlayButton">
                                                         <rect key="frame" x="141.5" y="0.0" width="121" height="96"/>
                                                         <state key="normal" image="Button-Play-icon-96"/>
+                                                        <connections>
+                                                            <action selector="handlePlayPauseButtonIsPressed:" destination="Qyg-d4-iYI" eventType="touchUpInside" id="O52-Dl-wbg"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-ML-smS" userLabel="ForwardButton">
                                                         <rect key="frame" x="282.5" y="0.0" width="121.5" height="96"/>
                                                         <state key="normal" image="Button-Forward-icon-96"/>
+                                                        <connections>
+                                                            <action selector="handleForwardButtonIsPressed:" destination="Qyg-d4-iYI" eventType="touchUpInside" id="DjZ-Mf-Q26"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

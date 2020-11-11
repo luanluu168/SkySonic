@@ -21,6 +21,33 @@ class DrivingModeViewController: UIViewController {
     
     // middle view
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBAction func handlePlayPauseButtonIsPressed(_ sender: UIButton) {
+        // if the player is playing, then pause the player and set the button image to the pause icon
+        if ( self.player.isPlaying() ) {
+            self.player.pause()
+            self.playPauseButton.setImage(UIImage(named: PLAY_ICON_96), for: UIControl.State.normal)
+            return
+        }
+        
+        // otherwise, play the player and set the button image to the play icon
+        self.player.play()
+        self.playPauseButton.setImage(UIImage(named: PAUSE_ICON_96), for: UIControl.State.normal)
+    }
+    @IBAction func handleBackwardButtonIsPressed(_ sender: UIButton) {
+        if (self.player.currentIndex > 0) {
+            self.player.currentIndex -= 1
+            self.player.removeAllItems()
+            configurePlayer()
+        }
+    }
+    @IBAction func handleForwardButtonIsPressed(_ sender: UIButton) {
+        // if the currentIndex is smaller than the array's last index
+        if (self.player.currentIndex < (self.player.tracks!.count - 1) ) {
+            self.player.currentIndex += 1
+            self.player.advanceToNextItem()
+        }
+    }
+    
     
     // bottom view
     @IBOutlet weak var favoriteButton: UIButton!
