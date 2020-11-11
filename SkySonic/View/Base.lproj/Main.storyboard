@@ -342,6 +342,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbk-39-DiX" userLabel="FavoriteButton">
                                                 <rect key="frame" x="143" y="96.5" width="128" height="128"/>
                                                 <state key="normal" image="star-icon-128"/>
+                                                <connections>
+                                                    <action selector="handleFavoriteButtonIsPressed:" destination="Qyg-d4-iYI" eventType="touchUpInside" id="D1a-2y-Dlq"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vFh-uF-Iyv" userLabel="VolumeStackView">
                                                 <rect key="frame" x="5" y="10" width="404" height="32"/>
@@ -389,7 +392,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mmf-Tb-nRC"/>
                     <connections>
-                        <outlet property="favoriteButton" destination="qbk-39-DiX" id="XcW-MP-dwo"/>
                         <outlet property="playPauseButton" destination="k4L-Qy-HPw" id="Jhv-GE-2jU"/>
                         <outlet property="songCurrentTimeLabel" destination="9BI-jk-ehm" id="QCs-e2-454"/>
                         <outlet property="songName" destination="nOA-g8-yLL" id="do7-TI-WSa"/>

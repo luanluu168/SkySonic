@@ -55,7 +55,15 @@ class DrivingModeViewController: UIViewController {
     @IBAction func handleVolumeSliderChange(_ sender: UISlider) {
         self.player.volume = volumeSlider.value
     }
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBAction func handleFavoriteButtonIsPressed(_ sender: UIButton) {
+        if let track = self.player.tracks?[self.player.currentIndex] {
+            self.player.currentTrack = track
+            let isDuplicated = checkDuplicate(trackToAdd: track)
+            if (!isDuplicated) { // if the current track is not duplicated
+                favorites.append(track)
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
