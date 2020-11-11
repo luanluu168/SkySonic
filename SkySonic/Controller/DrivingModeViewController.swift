@@ -13,6 +13,7 @@ class DrivingModeViewController: UIViewController {
 
     var player: Player!
     var songPlayingTimer: Time! = Time(hours: 0, minutes: 0, seconds: 0)
+    var songDurationTimer: Time! = Time(hours: 0, minutes: 0, seconds: 0)
     
     // top view
     @IBOutlet weak var songName: UILabel!
@@ -53,7 +54,26 @@ class DrivingModeViewController: UIViewController {
                 NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlayingSong), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
             }
         }
-            
+        
+        // display the player's current song's playing time
+        displayPlayingTime()
+    }
+    
+    func displayPlayingTime() {
+        let interval = CMTime(value: 1, timescale: 2)
+        self.player.timeObserverToken = self.player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: {
+            [weak self] (progressTime) in
+           let totalSeconds: Float64 = CMTimeGetSeconds(progressTime)
+            // update the song's duration time
+            let duration = self?.player.currentItem?.duration.seconds ?? 0
+            self?.songDurationTimer!.updateTime(inputSeconds: duration)
+            // update the song's playing time
+            self?.songPlayingTimer!.updateTime(inputSeconds: totalSeconds)
+
+            let currentPlayingTimeString = "\(self?.songPlayingTimer!.getMinutesInStringFormat() ?? "--"):\(self?.songPlayingTimer!.getSecondsInStringFormat() ?? "--")"
+            let durationTimeString = "\(self?.songDurationTimer.getMinutesInStringFormat() ?? "--"):\(self?.songDurationTimer.getSecondsInStringFormat() ?? "--")"
+            self?.songCurrentTimeLabel.text = "\(currentPlayingTimeString) / \(durationTimeString)"
+        })
     }
     
     @objc func playerDidFinishPlayingSong(note: NSNotification) {
@@ -76,6 +96,7 @@ class DrivingModeViewController: UIViewController {
         super.viewWillAppear(animated)
         player.play()
     }
+    
     
         
     
