@@ -19,7 +19,7 @@ class FavoriteTableViewController: UITableViewController {
         self.tableView.backgroundColor = UIColor.systemGray
         
         // change the navigation bar's image
-//        self.changeNavigationBarBackButtonImage()
+        self.changeNavigationBarBackButtonImage()
     }
 
     // MARK: - Table view data source
@@ -38,6 +38,10 @@ class FavoriteTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.text = "#\(indexPath.row + 1). \(favorites[indexPath.row].trackName)"
         cell.detailTextLabel?.text = favorites[indexPath.row].artistName
+        // change the font and text color
+        cell.textLabel?.font = UIFont(name: TIMES_NEW_ROMAN_FONT, size: 17)
+        cell.textLabel?.textColor = .white
+        cell.detailTextLabel?.textColor = .white
         
         return cell
     }
