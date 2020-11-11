@@ -158,26 +158,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZS-MM-seq" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="468.5" width="414" height="234.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="35C-4i-QhU" userLabel="SongSliderAndMainButtonsStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="35C-4i-QhU" userLabel="SongSliderAndMainButtonsStackView">
                                                 <rect key="frame" x="5" y="10" width="404" height="214.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-nL-qgo" userLabel="SongPlayingDetailStackView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="404" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-nL-qgo" userLabel="SongPlayingDetailStackView">
+                                                        <rect key="frame" x="5" y="0.0" width="394" height="97.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-Uk-Cdv" userLabel="SongCurrentTimeLabel">
-                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="97.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-Ec-zO2" userLabel="SongSlider">
-                                                                <rect key="frame" x="47" y="0.0" width="310" height="31"/>
+                                                                <rect key="frame" x="49" y="0.0" width="296" height="98.5"/>
                                                                 <color key="minimumTrackTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="maximumTrackTintColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="thumbTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZ4-lx-Iyu" userLabel="SongDurationLabel">
-                                                                <rect key="frame" x="358" y="0.0" width="46" height="30"/>
+                                                                <rect key="frame" x="348" y="0.0" width="46" height="97.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -185,24 +185,24 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3YD-bc-5b5" userLabel="MainButtonsStackView">
-                                                        <rect key="frame" x="0.0" y="86" width="404" height="128.5"/>
+                                                        <rect key="frame" x="20" y="117.5" width="364" height="97"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziN-vD-FeK" userLabel="BackwardButton">
-                                                                <rect key="frame" x="0.0" y="0.0" width="121.5" height="128.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="108" height="97"/>
                                                                 <state key="normal" image="Button-Backward-icon-64"/>
                                                                 <connections>
                                                                     <action selector="handleBackwardButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="tvm-ro-8Br"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVw-Sh-y5q" userLabel="PlayPauseButton">
-                                                                <rect key="frame" x="141.5" y="0.0" width="121" height="128.5"/>
+                                                                <rect key="frame" x="128" y="0.0" width="108" height="97"/>
                                                                 <state key="normal" image="Button-Play-icon-64"/>
                                                                 <connections>
                                                                     <action selector="handlePlayPauseButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="oBY-iO-5Xa"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4d-5r-GiK" userLabel="ForwardButton">
-                                                                <rect key="frame" x="282.5" y="0.0" width="121.5" height="128.5"/>
+                                                                <rect key="frame" x="256" y="0.0" width="108" height="97"/>
                                                                 <state key="normal" image="Button-Forward-icon-64"/>
                                                                 <connections>
                                                                     <action selector="handleForwardButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="lOb-aH-BfD"/>
@@ -211,16 +211,20 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="3YD-bc-5b5" secondAttribute="trailing" constant="20" id="3ZK-h1-d0s"/>
+                                                    <constraint firstItem="VIc-nL-qgo" firstAttribute="leading" secondItem="35C-4i-QhU" secondAttribute="leading" constant="5" id="8Hf-oW-J6S"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VIc-nL-qgo" secondAttribute="trailing" constant="5" id="EtI-wq-BCx"/>
+                                                    <constraint firstItem="3YD-bc-5b5" firstAttribute="leading" secondItem="35C-4i-QhU" secondAttribute="leading" constant="20" id="Xj0-4D-I5b"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="35C-4i-QhU" secondAttribute="trailing" constant="5" id="QUY-Zr-oia"/>
-                                            <constraint firstItem="35C-4i-QhU" firstAttribute="centerY" secondItem="pZS-MM-seq" secondAttribute="centerY" id="Twb-ZM-BI4"/>
-                                            <constraint firstItem="35C-4i-QhU" firstAttribute="centerX" secondItem="pZS-MM-seq" secondAttribute="centerX" id="Zdw-Du-38e"/>
-                                            <constraint firstItem="35C-4i-QhU" firstAttribute="leading" secondItem="pZS-MM-seq" secondAttribute="leading" constant="5" id="okZ-sm-QDO"/>
-                                            <constraint firstAttribute="bottom" secondItem="35C-4i-QhU" secondAttribute="bottom" constant="10" id="qjR-Iz-bHw"/>
-                                            <constraint firstItem="35C-4i-QhU" firstAttribute="top" secondItem="pZS-MM-seq" secondAttribute="top" constant="10" id="tKy-EB-kEs"/>
+                                            <constraint firstItem="35C-4i-QhU" firstAttribute="top" secondItem="pZS-MM-seq" secondAttribute="top" constant="10" id="FOg-i7-4eD"/>
+                                            <constraint firstAttribute="trailing" secondItem="35C-4i-QhU" secondAttribute="trailing" constant="5" id="PjR-IY-Hy8"/>
+                                            <constraint firstAttribute="bottom" secondItem="35C-4i-QhU" secondAttribute="bottom" constant="10" id="ZVA-mi-MbH"/>
+                                            <constraint firstItem="35C-4i-QhU" firstAttribute="leading" secondItem="pZS-MM-seq" secondAttribute="leading" constant="5" id="paR-th-duF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
