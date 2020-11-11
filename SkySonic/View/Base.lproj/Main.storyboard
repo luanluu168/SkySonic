@@ -282,13 +282,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.3411764706" green="0.25882352939999997" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="nOA-g8-yLL" firstAttribute="centerY" secondItem="AZm-bG-jqD" secondAttribute="centerY" id="4na-Uo-FaM"/>
                                             <constraint firstItem="nOA-g8-yLL" firstAttribute="top" secondItem="AZm-bG-jqD" secondAttribute="top" constant="10" id="5Ra-p0-KRs"/>
                                             <constraint firstAttribute="trailing" secondItem="nOA-g8-yLL" secondAttribute="trailing" constant="10" id="6X5-ue-5hX"/>
                                             <constraint firstItem="nOA-g8-yLL" firstAttribute="leading" secondItem="AZm-bG-jqD" secondAttribute="leading" constant="10" id="ISe-Mk-Dq0"/>
-                                            <constraint firstItem="nOA-g8-yLL" firstAttribute="centerX" secondItem="AZm-bG-jqD" secondAttribute="centerX" id="T0D-ne-zTO"/>
                                             <constraint firstItem="9BI-jk-ehm" firstAttribute="centerX" secondItem="AZm-bG-jqD" secondAttribute="centerX" id="pye-Mt-GKJ"/>
                                             <constraint firstAttribute="bottom" secondItem="9BI-jk-ehm" secondAttribute="bottom" constant="10" id="yiI-v6-6eX"/>
                                         </constraints>
@@ -314,7 +313,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.25098039220000001" green="0.65098039220000004" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="qxH-ZQ-goo" firstAttribute="leading" secondItem="vGN-i6-iTD" secondAttribute="leading" constant="5" id="Qwa-NP-z6u"/>
                                             <constraint firstItem="qxH-ZQ-goo" firstAttribute="top" secondItem="vGN-i6-iTD" secondAttribute="top" constant="20" id="bTx-Mm-aHg"/>
@@ -324,27 +323,38 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmV-XP-G3U" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="468.5" width="414" height="234.5"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zZC-wg-IQk" userLabel="VolumeSlider">
-                                                <rect key="frame" x="148" y="31" width="118" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </slider>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbk-39-DiX" userLabel="FavoriteButton">
-                                                <rect key="frame" x="184" y="135" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbk-39-DiX" userLabel="FavoriteButton">
+                                                <rect key="frame" x="143" y="96.5" width="128" height="128"/>
+                                                <state key="normal" image="star-icon-128"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG9-Z0-c4b" userLabel="VolumeLowerButton">
-                                                <rect key="frame" x="8" y="30" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-mh-7LY" userLabel="VolumeHigherButton">
-                                                <rect key="frame" x="360" y="30" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vFh-uF-Iyv" userLabel="VolumeStackView">
+                                                <rect key="frame" x="5" y="10" width="404" height="32"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG9-Z0-c4b" userLabel="VolumeLowerButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                        <state key="normal" image="Volume-Mute-icon-32"/>
+                                                    </button>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zZC-wg-IQk" userLabel="VolumeSlider">
+                                                        <rect key="frame" x="38" y="0.0" width="328" height="33"/>
+                                                        <color key="minimumTrackTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="maximumTrackTintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </slider>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-mh-7LY" userLabel="VolumeHigherButton">
+                                                        <rect key="frame" x="372" y="0.0" width="32" height="32"/>
+                                                        <state key="normal" image="Volume-Up-icon-32"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.3411764706" green="0.25882352939999997" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="qbk-39-DiX" secondAttribute="bottom" constant="10" id="3fe-Iz-wUO"/>
+                                            <constraint firstItem="qbk-39-DiX" firstAttribute="centerX" secondItem="NmV-XP-G3U" secondAttribute="centerX" id="7Bg-dC-Au7"/>
+                                            <constraint firstItem="vFh-uF-Iyv" firstAttribute="leading" secondItem="NmV-XP-G3U" secondAttribute="leading" constant="5" id="bZh-Dx-H0h"/>
+                                            <constraint firstAttribute="trailing" secondItem="vFh-uF-Iyv" secondAttribute="trailing" constant="5" id="bau-5i-uwF"/>
+                                            <constraint firstItem="vFh-uF-Iyv" firstAttribute="top" secondItem="NmV-XP-G3U" secondAttribute="top" constant="10" id="xAt-EP-gXx"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -512,9 +522,12 @@
         <image name="Button-Play-icon-96" width="96" height="96"/>
         <image name="Messaging-More-icon-48" width="48" height="48"/>
         <image name="Taxi-icon-48" width="48" height="48"/>
+        <image name="Volume-Mute-icon-32" width="32" height="32"/>
+        <image name="Volume-Up-icon-32" width="32" height="32"/>
         <image name="appLogo2Update" width="200" height="200"/>
         <image name="darkness-640" width="375" height="812"/>
         <image name="musicLogo" width="200" height="200"/>
+        <image name="star-icon-128" width="128" height="128"/>
         <image name="star-icon-48" width="48" height="48"/>
     </resources>
 </document>
