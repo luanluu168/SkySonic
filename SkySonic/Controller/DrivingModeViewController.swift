@@ -38,12 +38,14 @@ class DrivingModeViewController: UIViewController {
             self.player.currentIndex -= 1
             self.player.removeAllItems()
             configurePlayer()
+            displaySongTitle()
         }
     }
     @IBAction func handleForwardButtonIsPressed(_ sender: UIButton) {
         // if the currentIndex is smaller than the array's last index
         if (self.player.currentIndex < (self.player.tracks!.count - 1) ) {
             self.player.currentIndex += 1
+            displaySongTitle()
             self.player.advanceToNextItem()
         }
     }
@@ -59,7 +61,7 @@ class DrivingModeViewController: UIViewController {
         if let track = self.player.tracks?[self.player.currentIndex] {
             songName.text  = track.trackName
             configurePlayer()
-            self.player.currentTrack = track
+            displaySongTitle()
             playPauseButton.setImage(UIImage(named: PAUSE_ICON_96), for: UIControl.State.normal)
         }
     }
@@ -107,7 +109,8 @@ class DrivingModeViewController: UIViewController {
         // print("______ in the now playing finish one song, items.count: \(player.items().count)")
          self.player.currentIndex = (self.player.currentIndex + 1) % self.player.tracks!.count
             
-            
+        // update the song name label
+        displaySongTitle()
             
          if (self.player.tracks!.count == 1) {
              // detach all songs' observer
@@ -129,7 +132,11 @@ class DrivingModeViewController: UIViewController {
         self.player.pause()
     }
     
-    
+    func displaySongTitle() {
+        if let track = self.player.tracks?[self.player.currentIndex] {
+            self.songName.text = track.trackName
+        }
+    }
         
     
     
