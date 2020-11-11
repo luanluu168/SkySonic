@@ -296,23 +296,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-i6-iTD" userLabel="MiddleView">
                                         <rect key="frame" x="0.0" y="234.5" width="414" height="234"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCn-jc-Ppv" userLabel="BackwardButton">
-                                                <rect key="frame" x="48" y="81" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4L-Qy-HPw" userLabel="PlayButton">
-                                                <rect key="frame" x="184" y="81" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-ML-smS" userLabel="ForwardButton">
-                                                <rect key="frame" x="316" y="81" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-ZQ-goo" userLabel="MainButtonsStackView">
+                                                <rect key="frame" x="5" y="20" width="404" height="96"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCn-jc-Ppv" userLabel="BackwardButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="96"/>
+                                                        <state key="normal" image="Button-Backward-icon-96"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4L-Qy-HPw" userLabel="PlayButton">
+                                                        <rect key="frame" x="141.5" y="0.0" width="121" height="96"/>
+                                                        <state key="normal" image="Button-Play-icon-96"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-ML-smS" userLabel="ForwardButton">
+                                                        <rect key="frame" x="282.5" y="0.0" width="121.5" height="96"/>
+                                                        <state key="normal" image="Button-Forward-icon-96"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.25098039220000001" green="0.65098039220000004" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="qxH-ZQ-goo" firstAttribute="leading" secondItem="vGN-i6-iTD" secondAttribute="leading" constant="5" id="Qwa-NP-z6u"/>
+                                            <constraint firstItem="qxH-ZQ-goo" firstAttribute="top" secondItem="vGN-i6-iTD" secondAttribute="top" constant="20" id="bTx-Mm-aHg"/>
+                                            <constraint firstItem="qxH-ZQ-goo" firstAttribute="centerX" secondItem="vGN-i6-iTD" secondAttribute="centerX" id="wY0-FG-7nf"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmV-XP-G3U" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="468.5" width="414" height="234.5"/>
@@ -498,8 +505,11 @@
     <resources>
         <image name="Audio-volume-icon-48" width="48" height="48"/>
         <image name="Button-Backward-icon-64" width="64" height="64"/>
+        <image name="Button-Backward-icon-96" width="96" height="96"/>
         <image name="Button-Forward-icon-64" width="64" height="64"/>
+        <image name="Button-Forward-icon-96" width="96" height="96"/>
         <image name="Button-Play-icon-64" width="64" height="64"/>
+        <image name="Button-Play-icon-96" width="96" height="96"/>
         <image name="Messaging-More-icon-48" width="48" height="48"/>
         <image name="Taxi-icon-48" width="48" height="48"/>
         <image name="appLogo2Update" width="200" height="200"/>
