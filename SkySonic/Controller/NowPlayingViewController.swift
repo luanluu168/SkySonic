@@ -34,6 +34,15 @@ class NowPlayingViewController: UIViewController {
     @IBAction func handleVolumeSliderChange(_ sender: UISlider) {
         player.volume = volumeSlider.value
     }
+    @IBAction func handleAddToFavoriteButtonIsPressed(_ sender: UIButton) {
+        if let track = player.tracks?[player.currentIndex] {
+            player.currentTrack = track
+            let isDuplicated = checkDuplicate(trackToAdd: track)
+            if (!isDuplicated) { // if the current track is not duplicated
+                favorites.append(track)
+            }
+        }
+    }
     // end middle area
     
     // bottom area

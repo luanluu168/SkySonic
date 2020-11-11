@@ -125,6 +125,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bES-y3-wc7" userLabel="FavoriteButton">
                                                 <rect key="frame" x="298" y="176" width="48" height="48"/>
                                                 <state key="normal" image="star-icon-48"/>
+                                                <connections>
+                                                    <action selector="handleAddToFavoriteButtonIsPressed:" destination="5l6-NW-eEw" eventType="touchUpInside" id="PUL-0R-FEp"/>
+                                                </connections>
                                             </button>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="01a-Gj-rkI" userLabel="VolumeSlider">
                                                 <rect key="frame" x="13" y="136" width="104" height="31"/>
