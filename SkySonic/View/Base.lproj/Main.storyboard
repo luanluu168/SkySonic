@@ -348,6 +348,9 @@
                                                         <color key="minimumTrackTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="maximumTrackTintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="thumbTintColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="handleVolumeSliderChange:" destination="Qyg-d4-iYI" eventType="valueChanged" id="UXU-p8-Z21"/>
+                                                        </connections>
                                                     </slider>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-mh-7LY" userLabel="VolumeHigherButton">
                                                         <rect key="frame" x="372" y="0.0" width="32" height="32"/>
@@ -383,6 +386,7 @@
                         <outlet property="playPauseButton" destination="k4L-Qy-HPw" id="Jhv-GE-2jU"/>
                         <outlet property="songCurrentTimeLabel" destination="9BI-jk-ehm" id="QCs-e2-454"/>
                         <outlet property="songName" destination="nOA-g8-yLL" id="do7-TI-WSa"/>
+                        <outlet property="volumeSlider" destination="zZC-wg-IQk" id="hhg-zy-YOd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZx-h6-7au" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
