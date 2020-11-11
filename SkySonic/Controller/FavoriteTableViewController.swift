@@ -10,6 +10,8 @@ import UIKit
 
 class FavoriteTableViewController: UITableViewController {
     
+    var currentFavoriteIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +39,20 @@ class FavoriteTableViewController: UITableViewController {
         cell.detailTextLabel?.text = favorites[indexPath.row].artistName
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // print("Calling favorite didselectRowAt: \(indexPath.row)")
+        currentFavoriteIndex = indexPath.row
+        performSegue(withIdentifier: "favoriteToNowPlayingSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // print("Calling prepare inside favorite")
+        if let destination = segue.destination as? NowPlayingViewController {
+            destination.curTrack = favorites[currentFavoriteIndex]
+            destination.isSegueFromFavorite = true
+        }
     }
 
     /*

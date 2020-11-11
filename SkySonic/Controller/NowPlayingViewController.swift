@@ -14,6 +14,7 @@ class NowPlayingViewController: UIViewController {
     var curTrack: Track?
     var songDurationTimer: Time! = Time(hours: 0, minutes: 0, seconds: 0)
     var songPlayingTimer: Time!   = Time(hours: 0, minutes: 0, seconds: 0)
+    var isSegueFromFavorite: Bool = false
     
     // top area
     @IBOutlet weak var artistImage: UIImageView!
@@ -83,7 +84,7 @@ class NowPlayingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         print("in the now playing view, calling view did load \(player.tracks!.count)")
         print("___________________ check player.currentIndex = \(player.currentIndex)")
         // hide volume slider, driving mode button and favorite button
@@ -96,6 +97,13 @@ class NowPlayingViewController: UIViewController {
         self.artistImage.makeRounded(10.0)
         // turn the volume slider to vertical
         volumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2) )
+        
+        if isSegueFromFavorite {
+            player.removeAllItems()
+            player.currentIndex = 0
+            player.tracks = [ ]
+            player.tracks!.append(self.curTrack!)
+        }
         
         // if the element at currentIndex of the player's array contains data
         if let track = player.tracks?[player.currentIndex] {

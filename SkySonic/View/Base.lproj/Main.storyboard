@@ -510,6 +510,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite" id="bS1-Mp-Xo3"/>
+                    <connections>
+                        <segue destination="5l6-NW-eEw" kind="show" identifier="favoriteToNowPlayingSegue" id="czV-qh-mUE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKr-bn-CX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -554,6 +557,9 @@
             <point key="canvasLocation" x="390" y="-429"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="czV-qh-mUE"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Audio-volume-icon-48" width="48" height="48"/>
         <image name="Button-Backward-icon-64" width="64" height="64"/>
