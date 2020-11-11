@@ -50,7 +50,6 @@ class DrivingModeViewController: UIViewController {
         }
     }
     
-    
     // bottom view
     @IBOutlet weak var volumeSlider: UISlider!
     @IBAction func handleVolumeSliderChange(_ sender: UISlider) {
