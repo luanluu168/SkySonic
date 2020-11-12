@@ -93,6 +93,8 @@ class NowPlayingViewController: UIViewController {
         self.favoriteButton.isHidden = true
         // change the thumbImage of the song slider to a smaller circle image
         self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
+        // change the thumbImage of the volume slider to a smaller circle image
+        self.volumeSlider.setThumbImage(UIImage(named: BLUE_ICON_16), for: .normal)
         // make the artist image rounded corner
         self.artistImage.makeRounded(10.0)
         // turn the volume slider to vertical
