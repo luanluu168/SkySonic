@@ -524,7 +524,7 @@
         <scene sceneID="v9I-Ks-8s7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bje-JR-Lg7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="vmC-h4-HT1"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="vmC-h4-HT1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SVV-hi-aTO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -543,7 +543,7 @@
         <scene sceneID="vgd-9Q-Ljb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rYQ-aF-9kL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" id="Kqa-Vu-bB5"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="star.fill" catalog="system" id="Kqa-Vu-bB5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZSK-dX-ySy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -576,8 +576,10 @@
         <image name="Volume-Up-icon-32" width="32" height="32"/>
         <image name="appLogo2Update" width="200" height="200"/>
         <image name="darkness-640" width="375" height="812"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="musicLogo" width="200" height="200"/>
         <image name="star-icon-128" width="128" height="128"/>
         <image name="star-icon-48" width="48" height="48"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
