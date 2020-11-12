@@ -15,6 +15,9 @@ class FavoriteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // display an Edit button in the navigation bar for this view controller
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         // change table background color
         self.tableView.backgroundColor = UIColor.systemGray
         
