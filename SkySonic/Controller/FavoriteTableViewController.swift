@@ -49,6 +49,12 @@ class FavoriteTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // print("Calling favorite delete \(indexPath.row)")
+        favorites.remove(at: indexPath.row)
+        self.tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // print("Calling favorite didselectRowAt: \(indexPath.row)")
         currentFavoriteIndex = indexPath.row
