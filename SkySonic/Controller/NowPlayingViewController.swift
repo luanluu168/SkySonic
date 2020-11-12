@@ -122,19 +122,24 @@ class NowPlayingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("$$$$$$$$$$$$$$$$$$$$$$$$ NowPlaying view will appear is called")
-        // hide volume slider, driving mode button and favorite button
-        self.volumeSlider.isHidden = true
-        self.drivingModeButton.isHidden = true
-        self.favoriteButton.isHidden = true
-        // change the thumbImage of the song slider to a smaller circle image
-        self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
+//        // hide volume slider, driving mode button and favorite button
+//        self.volumeSlider.isHidden = true
+//        self.drivingModeButton.isHidden = true
+//        self.favoriteButton.isHidden = true
+//        // change the thumbImage of the song slider to a smaller circle image
+//        self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
+//
+//        // if the element at currentIndex of the player's array contains data
+//        if let track = player.tracks?[player.currentIndex] {
+//            configurePlayer()
+//            songName.text = track.trackName
+//            player.currentTrack = track
+//            displayImage()
+//        }
         
-        // if the element at currentIndex of the player's array contains data
-        if let track = player.tracks?[player.currentIndex] {
-            configurePlayer()
-            songName.text = track.trackName
-            player.currentTrack = track
-            displayImage()
+        guard let tracks = player.tracks else { return }
+        if (tracks.count > 0) {
+            player.play()
         }
     }
     
