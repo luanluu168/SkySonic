@@ -215,6 +215,7 @@ class NowPlayingViewController: UIViewController {
                 player.removeTimeObserver(token)
                 player.timeObserverToken = nil
             }
+            configurePlayer()
         }
         
     }
