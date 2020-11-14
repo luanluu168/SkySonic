@@ -85,8 +85,8 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("in the now playing view, calling view did load \(player.tracks!.count)")
-        print("___________________ check player.currentIndex = \(player.currentIndex)")
+        // print("in the now playing view, calling view did load \(player.tracks!.count)")
+        // print("___________________ check player.currentIndex = \(player.currentIndex)")
         // hide volume slider, driving mode button and favorite button
         self.volumeSlider.isHidden = true
         self.drivingModeButton.isHidden = true
@@ -123,7 +123,7 @@ class NowPlayingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("$$$$$$$$$$$$$$$$$$$$$$$$ NowPlaying view will appear is called")
+        // print("$$$$$$$$$$$$$$$$$$$$$$$$ NowPlaying view will appear is called")
         
         guard let tracks = player.tracks else { return }
         if tracks.count > 0 {
@@ -136,7 +136,6 @@ class NowPlayingViewController: UIViewController {
         // as well as add observer to each song
         if let currentTrack = player.tracks?[player.currentIndex] {
             let previewURL = URL(string: currentTrack.previewUrl)!
-            
             print("Caling play, url= \(previewURL)")
             for index in player.currentIndex...player.tracks!.count-1 {
                 let playerItem = AVPlayerItem.init(url: URL(string: player.tracks![index].previewUrl)!)
@@ -184,7 +183,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     func formatDurationTime(totalseconds: Double) -> String {
-        // if the totalseconds is not a number, return 00:00 as default
+        // if the totalseconds is not a number, return 00:00 as a default string
         if totalseconds.isNaN { return "00:00" }
         
         // otherwise, return the song's duration
@@ -200,7 +199,7 @@ class NowPlayingViewController: UIViewController {
         displayImage()
         displayDuration()
         
-        if (player.tracks!.count == 1) {
+        if player.tracks!.count == 1 {
             // detach all songs' observer
             if let token = player.timeObserverToken {
                 player.removeTimeObserver(token)
@@ -213,9 +212,9 @@ class NowPlayingViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! DrivingModeViewController
-        print("________________________________________ nowplaying prepare is called, player.currentIndex = \(player.currentIndex)")
+        // print("________________________________________ nowplaying prepare is called, player.currentIndex = \(player.currentIndex)")
         
-        if (destination.player == nil) {
+        if destination.player == nil {
             destination.player = Player()
             destination.player.currentIndex = player.currentIndex
             destination.player.tracks = player.tracks
@@ -230,7 +229,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     @objc func handleSongSliderChange() {
-        print("Song slider value: \(songSlider.value)")
+        // print("Song slider value: \(songSlider.value)")
         if let duration = player.currentItem?.duration {
             let totalSeconds = CMTimeGetSeconds(duration)
             let currentValue = Float64(songSlider.value) * totalSeconds
@@ -241,7 +240,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     func displayImage() {
-        print("Calling displayImage")
+        // print("Calling displayImage")
         
         // the case where the player's array do not have the data at the currentIndex
         guard player.tracks?[player.currentIndex] != nil else { return }
