@@ -124,23 +124,9 @@ class NowPlayingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("$$$$$$$$$$$$$$$$$$$$$$$$ NowPlaying view will appear is called")
-//        // hide volume slider, driving mode button and favorite button
-//        self.volumeSlider.isHidden = true
-//        self.drivingModeButton.isHidden = true
-//        self.favoriteButton.isHidden = true
-//        // change the thumbImage of the song slider to a smaller circle image
-//        self.songSlider.setThumbImage(UIImage(named: RED_ICON_16), for: .normal)
-//
-//        // if the element at currentIndex of the player's array contains data
-//        if let track = player.tracks?[player.currentIndex] {
-//            configurePlayer()
-//            songName.text = track.trackName
-//            player.currentTrack = track
-//            displayImage()
-//        }
         
         guard let tracks = player.tracks else { return }
-        if (tracks.count > 0) {
+        if tracks.count > 0 {
             player.play()
         }
     }
@@ -198,7 +184,10 @@ class NowPlayingViewController: UIViewController {
     }
     
     func formatDurationTime(totalseconds: Double) -> String {
-        guard !totalseconds.isNaN else { return "00:00" }
+        // if the totalseconds is not a number, return 00:00 as default
+        if totalseconds.isNaN { return "00:00" }
+        
+        // otherwise, return the song's duration
         self.songDurationTimer!.updateTime(inputSeconds: totalseconds)
         return "\(self.songDurationTimer!.getMinutesInStringFormat()):\(self.songDurationTimer!.getSecondsInStringFormat())"
     }
@@ -279,15 +268,5 @@ class NowPlayingViewController: UIViewController {
         }
         displayImageTask.resume()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
