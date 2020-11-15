@@ -129,6 +129,8 @@ class DrivingModeViewController: UIViewController {
                      self.player.removeTimeObserver(token)
                      self.player.timeObserverToken = nil
              }
+            // reinitialize the player's queue so that it can playback all the songs
+            configurePlayer()
          }
         
     }
