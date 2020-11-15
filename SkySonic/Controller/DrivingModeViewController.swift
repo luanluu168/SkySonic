@@ -12,7 +12,7 @@ import UIKit
 class DrivingModeViewController: UIViewController {
 
     var player: Player!
-    var songPlayingTimer: Time! = Time(hours: 0, minutes: 0, seconds: 0)
+    var songPlayingTimer:   Time! = Time(hours: 0, minutes: 0, seconds: 0)
     var songDurationTimer: Time! = Time(hours: 0, minutes: 0, seconds: 0)
     
     // top view
@@ -148,18 +148,5 @@ class DrivingModeViewController: UIViewController {
             self.songName.text = track.trackName
         }
     }
-        
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
