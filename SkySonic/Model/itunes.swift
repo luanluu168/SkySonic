@@ -54,7 +54,7 @@ func createURL(artistName: String) -> URL? {
         "term": artistName,
         "media": "music",
         "lang": "en_us",
-        "limit": "12"
+        "limit": "20"
     ]
     return itunesBaseURL.withQueries(itunesQuery)
 }
