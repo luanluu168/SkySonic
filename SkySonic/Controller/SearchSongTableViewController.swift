@@ -26,7 +26,7 @@ class SearchSongTableViewController: UITableViewController, UISearchBarDelegate 
         self.tableView.backgroundColor = UIColor.systemGray
         
         // change search icon image
-        searchBar.setImage(UIImage(named: SEARCH_POINTER_ICON_24), for: .search, state: .normal)
+        searchBar.setImage(UIImage(named: RED_SEARCH_ICON_24), for: .search, state: .normal)
         
         // change the navigation bar's back button image
         self.changeNavigationBarBackButtonImage()
