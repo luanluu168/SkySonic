@@ -14,7 +14,7 @@ class FavoriteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // display an Edit button in the navigation bar for this view controller
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -23,6 +23,10 @@ class FavoriteTableViewController: UITableViewController {
         
         // change the navigation bar's image
         self.changeNavigationBarBackButtonImage()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
